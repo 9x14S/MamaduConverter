@@ -2,7 +2,6 @@
 #A program to be run on the command line in windows, takes a specially formatted text file or files, opens and parses it 
 #and then makes Anki cards out of the text.
 #I know the program sucks but it is only a test project while I learn Python.
-#Btw fuck if statements
 
 import sys, re, genanki, random
 
