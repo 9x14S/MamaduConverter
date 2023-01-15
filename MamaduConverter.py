@@ -3,7 +3,7 @@
 #and then makes Anki cards out of the text.
 #I know the program sucks but it is only a test project while I learn Python.
 
-import sys, re, genanki, random
+import sys, re, genanki, random, io
 
 #Here I initialize the required variables, lists and RegEx pattern.
 #This might need some extra cleaning.
@@ -84,7 +84,7 @@ def main():
     for numberOfFiles in filesToUse:
         my_deck = genanki.Deck(random.randrange(1 << 30, 1 << 31), 'Sourced from: ' + filesToUse[forIteration])
         try:
-            fileObj = open(filesToUse[forIteration])
+            fileObj = io.open(filesToUse[forIteration], 'r', encoding='utf8')
         except IndexError:
             return '\nThis program works by running it in the Windows CMD and providing the path or name of one or more .txt files. \nThis message appeared because one or more of the files couldn\'t be opened. \nPlease, try again.'
         contents = fileObj.read()
